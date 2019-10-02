@@ -1,0 +1,48 @@
+{% extends 'baseBack2.html.twig' %}
+{% block stylesheets %}
+  <style>
+  
+  </style>
+{% endblock %}
+{% block body%}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Item</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Couleur</th>
+      <th scope="col">Model</th> 
+      <th scope="col">Taille</th>
+      <th scope="col">Categorie</th>
+      <th scope="col">Pointure</th>
+      <th scope="col">Image</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for a in article %}
+    <tr >
+      <td scope="row" ><a href="{{path('article-edit',{'id': a.id})}}">{{a.name}}<a></td>
+      <td>{{a.menu.name}}</td>
+      <td>{{a.price}}</td>
+      {% if (a.color ) %}
+        <td style='background-color:{{a.color.name}} !important'>{{a.color.name}}</td>
+      {% else %}   
+        <td></td>
+      {% endif %}
+      <td></td>
+      <td>{{a.taille.name}}</td>
+      <td>{{a.categorie.name}}</td>
+      <td>{{a.pointure.size}}</td>
+      <td><img src="/images/articles/{{a.image1}}" style='width: 40px;' /></td>
+
+
+
+
+
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

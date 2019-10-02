@@ -1,0 +1,17 @@
+{% extends 'baseBack2.html.twig' %}
+{% form_theme formTaille 'bootstrap_4_layout.html.twig' %}
+{% block body%}
+<h1> Création d'un article</h1>
+ {{ form_start(formTaille) }}
+  
+
+   {{ form_row(formTaille.name) }}
+
+
+   
+
+
+   <button class="btn btn-success" type="submit">Enregistrer</button>
+ {{ form_end(formTaille) }}
+
+{% endblock %}

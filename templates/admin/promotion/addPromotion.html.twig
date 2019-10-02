@@ -1,0 +1,19 @@
+{% extends 'baseBack2.html.twig' %}
+{% form_theme formPromotion 'bootstrap_4_layout.html.twig' %}
+{% block body%}
+<h1> Création d'un article</h1>
+ {{ form_start(formPromotion) }}
+  
+
+   {{ form_row(formPromotion.name) }}
+   {{ form_row(formPromotion.pourcentage) }}
+   {{ form_row(formPromotion.montant) }}
+
+
+   
+
+
+   <button class="btn btn-success" type="submit">Enregistrer</button>
+ {{ form_end(formPromotion) }}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'baseBack2.html.twig' %}
+{% block stylesheets %}
+  <style>
+  
+  </style>
+{% endblock %}
+{% block body%}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Position</th>
+      <th scope="col">Path</th>
+      <th scope="col">Etat</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for t in couleur %}
+    <tr>
+      <td scope="row">{{t.name}}</td>
+
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

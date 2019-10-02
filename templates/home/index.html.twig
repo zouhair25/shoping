@@ -1,0 +1,52 @@
+{% extends 'baseFrontHome.html.twig' %}
+
+
+{% block body %}
+   
+    <div class="row">
+        <div class="shop__grid__view__wrap">
+            {% for i in item %}  
+            <br>
+            <div class="htabs box-heading single-tab" style=" border-bottom: 1px solid black;">
+                <a href="#carousel-146224611-0" class="atab selected"><h3><span style="font-size: 15px;text-transform: uppercase;font-family: "Playfair Display";">{{i.name}}</span></h3></a>
+            </div>
+            <div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">   
+                {% for a in i.articles %}    
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="category">
+                            <div class="ht__cat__thumb">
+                                <a href="{{path('detail-article',{'id': a.id,'item': a.menu.name})}}">
+                                    <img src="/images/articles/{{a.image1}}" alt="product images">
+                                </a>
+                            </div>
+                            <div class="fr__hover__info">
+                                <ul class="product__action">
+                                    <li><a href="wishlist.html"><i class="icon-heart icons"></i></a></li>
+
+                                    <li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
+
+                                    <li><a href="#"><i class="icon-shuffle icons"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="fr__product__inner">
+                                <h4><a href="{{path('detail-article',{'id': a.id,'item': a.menu.name})}}">{{a.name}}</a></h4>
+                                <ul class="fr__pro__prize">
+                                    <li class="old__prize">{{a.price +-10}}</li>
+                                    <li>{{a.price}}</li>
+                                </ul>
+                                <div class="fr__list__btn">
+                                        <a class="fr__btn" href="cart.html">Ajouter au panier</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}     
+              
+            </div>
+             {% endfor %}            
+        </div>
+    </div>
+<br>
+    
+
+{% endblock %}

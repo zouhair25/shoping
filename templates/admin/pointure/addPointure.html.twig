@@ -1,0 +1,18 @@
+{% extends 'baseBack2.html.twig' %}
+{% form_theme formPointure 'bootstrap_4_layout.html.twig' %}
+{% block body%}
+<h1> Création d'un article</h1>
+ {{ form_start(formPointure) }}
+  
+
+   {{ form_row(formPointure.size) }}
+   
+
+
+   
+
+
+   <button class="btn btn-success" type="submit">Enregistrer</button>
+ {{ form_end(formPointure) }}
+
+{% endblock %}

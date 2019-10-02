@@ -1,0 +1,31 @@
+{% extends 'baseBack2.html.twig' %}
+{% block stylesheets %}
+  <style>
+  
+  </style>
+{% endblock %}
+{% block body%}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Size</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for p in pointure %}
+    <tr>
+      <td scope="row">{{p.size}}</td>
+      <td scope="row"></td>
+      <td scope="row"></td>
+      <td scope="row"></td>
+
+
+
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

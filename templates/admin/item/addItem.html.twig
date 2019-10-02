@@ -1,0 +1,19 @@
+{% extends 'baseBack2.html.twig' %}
+{% form_theme formMenu 'bootstrap_4_layout.html.twig' %}
+{% block body%}
+<h1> Création d'un article</h1>
+ {{ form_start(formMenu) }}
+  
+
+   {{ form_row(formMenu.name,{'attr': {'placeholder':"Titre de l'article"}}) }}
+   {{ form_row(formMenu.position) }}
+   {{ form_row(formMenu.path) }}
+   {{ form_row(formMenu.active) }}
+
+   
+
+
+   <button class="btn btn-success" type="submit">Enregistrer</button>
+ {{ form_end(formMenu) }}
+
+{% endblock %}

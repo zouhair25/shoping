@@ -1,0 +1,19 @@
+{% extends 'baseBack2.html.twig' %}
+{% form_theme formFabricant 'bootstrap_4_layout.html.twig' %}
+{% block body%}
+<h1> Création d'un Fabricant</h1>
+ {{ form_start(formFabricant) }}
+  
+
+   {{ form_row(formFabricant.name) }}
+   {{ form_row(formFabricant.tel) }}
+   {{ form_row(formFabricant.adress) }}
+
+
+   
+
+
+   <button class="btn btn-success" type="submit">Enregistrer</button>
+ {{ form_end(formFabricant) }}
+
+{% endblock %}

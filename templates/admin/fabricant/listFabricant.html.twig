@@ -1,0 +1,31 @@
+{% extends 'baseBack2.html.twig' %}
+{% block stylesheets %}
+  <style>
+  
+  </style>
+{% endblock %}
+{% block body%}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Pourcentage</th>
+      <th scope="col">Montant</th>
+      <th scope="col">Etat</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for f in fabricant %}
+    <tr>
+      <td scope="row">{{f.name}}</td>
+      <td scope="row">{{f.tel}}</td>
+      <td scope="row">{{f.adress}}</td>
+      <td scope="row"></td>
+
+
+
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
