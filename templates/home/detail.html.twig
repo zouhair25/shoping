@@ -48,7 +48,7 @@
                         <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
                             <div class="ht__product__dtl">
                                 <h2>{{article.name}}</h2>
-                                <h6>Fabricant : <span>{{article.fabricant.name}}</span></h6>
+                                {% if article.fabricant %} <h6>Fabricant : <span>{{article.fabricant.name}}</span></h6>{% endif %}
                                 
                                 <h6>Model : <span>MNG001</span></h6>
                                 <ul class="rating">
