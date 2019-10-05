@@ -80,14 +80,18 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/detail/{item}/{id}",name="detail-article")
-     * 
+     * @Route("/produits/{item}/{slug}/{id}",name="detail-article",requirements={"slug": "[a-z0-9\-]*"})
+     * param Article $article
      */
     
-    public function detail(ArticleRepository $repository,$id)
+    public function detail(Article $article,$slug)
     {
-      $article = $repository->find($id);
-      //var_dump($article);die();
+      //$article = $repository->find($id);
+      //dump($article);die();
+      /*if($article->getSlug() !== $slug){
+        return $this->redirectToRoute('detail-article',
+        ['item'=> $article->getMenu(),'slug'=> $article->getSlug(),'id'=> $article->getId()],301);
+      }*/
         return $this->render('home/detail.html.twig',['article'=>$article]);
     }
     

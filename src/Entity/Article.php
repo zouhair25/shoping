@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Cocur\Slugify\Slugify;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  * @Vich\Uploadable
@@ -143,6 +144,14 @@ class Article
 
         return $this;
     }
+
+    public function getSlug(): string
+    {
+        $slug = new Slugify();
+        $slug = $slug -> slugify($this->name);
+       return $slug;
+    }
+
 
 
 
